@@ -1,7 +1,7 @@
 {
 	"servers": {
 		"postman-api-http-server": {
-			"type": "sse",
+			"type": "http",
 			"url": "https://mcp.postman.com/mcp",
 			"headers": {
 				"Authorization": "Bearer ${input:postman-api-key}"
@@ -43,6 +43,19 @@
 				"-y",
 				"@modelcontextprotocol/server-sequential-thinking"
 			],
+			"type": "stdio"
+		},
+		"brave-search": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@brave/brave-search-mcp-server",
+				"--transport",
+				"stdio"
+			],
+			"env": {
+				"BRAVE_API_KEY": "BSAsnySCtYJPtVM2HPuWd-wf1Dj69xd"
+			},
 			"type": "stdio"
 		}
 	},
