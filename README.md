@@ -91,7 +91,7 @@ node simulate_iot.js --iterations=50 --no-enrich-metadata
 
 ## Enhanced Metadata Features (Step 6)
 
-The simulation now includes enriched device metadata for advanced dashboard and AI analysis:
+The simulation includes enriched device metadata for advanced dashboard and AI analysis:
 
 ### Enhanced Device Information
 - **device_name**: Human-friendly names (e.g., "Temperature Sensor 001")
@@ -115,9 +115,43 @@ The simulation now includes enriched device metadata for advanced dashboard and 
 - Manufacturer distribution tracking
 - Advanced metadata validation
 
+## Analytics & Health Monitoring (Step 7)
+
+The project now includes automated analytics and health monitoring capabilities:
+
+### Automated Summary Tables
+- **sensor_stats**: Aggregated statistics per sensor type (event counts, min/max/avg values)
+- **device_health**: Per-device health metrics and status monitoring
+- **Auto-updating**: PostgreSQL triggers automatically maintain summary data
+
+### Analytics Script
+Comprehensive analytics generation with `analyze_data.js`:
+
+```bash
+# Generate console analytics report
+node analyze_data.js
+
+# Export to JSON file with verbose output
+node analyze_data.js --format=json --report-file=report.json --verbose
+
+# Export to Markdown report
+node analyze_data.js --format=markdown --report-file=report.md
+
+# Show only critical health alerts
+node analyze_data.js --health-alerts
+```
+
+### Analytics Features
+- **System Summary**: Total devices, events, average battery levels
+- **Health Monitoring**: Device status distribution (good/warning/critical)
+- **Sensor Statistics**: Real-time aggregated metrics per sensor type
+- **Health Alerts**: Critical and warning device notifications
+- **Trend Analysis**: Daily event patterns, manufacturer distribution
+- **Multiple Formats**: Console, JSON, and Markdown output
+
 ### Configuration Options
 ```bash
-# Enable enhanced metadata (default)
+# Enhanced metadata simulation (default)
 node simulate_iot.js --enrich-metadata
 
 # Disable enhanced metadata for basic simulation
@@ -174,6 +208,33 @@ IOT-Dashboards/
 | `status` | text | Device status |
 | `metadata` | jsonb | Additional structured data |
 | `created_at` | timestamptz | Timestamp of record creation |
+
+### `sensor_stats` Table (Step 7)
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `type` | text | Sensor type (primary key) |
+| `event_count` | bigint | Total number of events for this sensor type |
+| `min_value` | numeric | Minimum recorded value |
+| `max_value` | numeric | Maximum recorded value |
+| `avg_value` | numeric | Average value |
+| `last_updated` | timestamptz | Last update timestamp |
+
+### `device_health` Table (Step 7)
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `device_id` | text | Unique device identifier (primary key) |
+| `latest_battery_level` | numeric | Current battery percentage |
+| `last_calibration` | timestamptz | Most recent calibration date |
+| `manufacturer` | text | Device manufacturer |
+| `health_status` | text | Health status ('good', 'warning', 'critical') |
+| `last_updated` | timestamptz | Last update timestamp |
+
+### Automated Updates
+- **Triggers**: PostgreSQL triggers automatically update summary tables on new events
+- **Functions**: `update_sensor_stats()` and `update_device_health()` maintain data integrity
+- **Real-time**: Summary data reflects live sensor readings
 
 ## Getting Started
 
