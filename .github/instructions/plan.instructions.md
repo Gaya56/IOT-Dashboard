@@ -7,6 +7,85 @@ Provide project context and coding guidelines that AI should follow when generat
 
 A comprehensive guide for building an IoT monitoring dashboard with Supabase backend and Node.js simulation.
 
+---
+
+## 🚀 MANDATORY DEVELOPMENT METHODOLOGY
+
+### MCP Server Utilization Requirements
+For EVERY prompt and step, AI MUST use ALL available MCP servers:
+
+1. **🔧 Sequential Thinking MCP**: Plan, analyze, and organize complex tasks through structured thinking
+2. **🗃️ Supabase MCP**: Database operations, migrations, queries, and testing
+3. **🔍 Brave Search MCP**: Verify official documentation, best practices, and industry standards
+4. **📁 Filesystem MCP**: File operations, reading, writing, and directory management
+5. **🧠 Memory MCP**: Track progress, store insights, and maintain project knowledge
+
+### 🔍 COMPREHENSIVE TESTING PROTOCOL
+**Before Every Step:**
+- Validate current project state using filesystem and supabase MCPs
+- Verify prerequisites and dependencies
+- Search for latest best practices using brave search MCP
+- Record current status in memory MCP
+
+**After Every Step:**
+- Test functionality using appropriate MCP servers
+- Validate data integrity in Supabase
+- Verify file changes and code quality
+- Update memory with completion status and lessons learned
+- Create comprehensive step summary
+
+### 📋 STEP COMPLETION SUMMARY FORMAT
+
+**At the top of every response, include:**
+
+```markdown
+## ✅ Step [X] Summary: [Step Name]
+
+**🎯 Objectives Completed:**
+- [ ] Objective 1
+- [ ] Objective 2
+- [ ] Objective 3
+
+**🧪 Testing Results:**
+- [ ] Pre-step validation: PASS/FAIL
+- [ ] Implementation: PASS/FAIL
+- [ ] Post-step testing: PASS/FAIL
+- [ ] Documentation updated: PASS/FAIL
+
+**📊 Project Overview Checklist:**
+- [ ] Database Schema (Step 2)
+- [ ] RLS Policies (Step 3)
+- [ ] Node.js Environment (Step 4)
+- [ ] IoT Simulation (Step 5)
+- [ ] Enhanced Metadata (Step 6)
+- [ ] Dashboard Frontend (Step 7)
+- [ ] Realtime Features (Step 8)
+
+**🔧 MCP Servers Used:**
+- [ ] Sequential Thinking: Planning and analysis
+- [ ] Supabase: Database operations
+- [ ] Brave Search: Documentation verification
+- [ ] Filesystem: File operations
+- [ ] Memory: Progress tracking
+
+**💡 Key Insights:**
+- Technical learnings
+- Best practices applied
+- Issues resolved
+
+**🚀 Next Steps:**
+- Immediate next actions
+- Prerequisites for next step
+```
+
+### 🏆 INDUSTRY STANDARDS COMPLIANCE
+All development must follow 2025 IoT best practices:
+- **Standards Compliance**: Matter, ISO/IEC 30141, OWASP IoT Top 10
+- **CI/CD Integration**: Automated testing in deployment workflows
+- **Security Standards**: HIPAA (healthcare), GDPR (data privacy), ISO (industrial)
+- **Testing Tools**: IoT simulators for controlled environments
+- **Documentation**: Comprehensive traceability and issue tracking
+
 ## Plan Overview
 
 1. **Create Supabase project + get API URL & keys** (Settings → API). ([Supabase][1])
