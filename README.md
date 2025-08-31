@@ -73,14 +73,58 @@ The `simulate_iot.js` script generates realistic sensor data for six device type
 ### Simulation Commands
 
 ```bash
-# Basic simulation
+# Basic simulation with enhanced metadata (default)
 npm run simulate
 
 # Verbose output with detailed logs
 npm run simulate:verbose
 
+# Disable enhanced metadata for backward compatibility
+npm run simulate:basic
+
 # Custom parameters
 node simulate_iot.js --iterations=100 --delay=1000 --verbose
+
+# Disable enhanced metadata
+node simulate_iot.js --iterations=50 --no-enrich-metadata
+```
+
+## Enhanced Metadata Features (Step 6)
+
+The simulation now includes enriched device metadata for advanced dashboard and AI analysis:
+
+### Enhanced Device Information
+- **device_name**: Human-friendly names (e.g., "Temperature Sensor 001")
+- **location**: Realistic room/zone identifiers from predefined pools
+- **battery_level**: Current battery charge percentage (0-100%)
+- **last_calibration**: Recent calibration date (within past 12 months)
+- **manufacturer**: Random manufacturer from: Acme Sensors, IoTCo, TechDevices, SmartSensor Inc, ConnectedTech
+- **system_health**: Health status based on battery level and sensor readings
+  - `good`: Battery > 40%, normal sensor readings
+  - `warning`: Battery 20-40% or abnormal sensor readings
+  - `critical`: Battery < 20% or dangerous sensor readings
+
+### Device Registry System
+- Maintains consistent metadata for each device across simulation runs
+- Simulates realistic battery degradation over time
+- Caches device information for performance
+
+### Enhanced Analysis
+- Battery status monitoring with low-battery alerts
+- System health distribution analysis
+- Manufacturer distribution tracking
+- Advanced metadata validation
+
+### Configuration Options
+```bash
+# Enable enhanced metadata (default)
+node simulate_iot.js --enrich-metadata
+
+# Disable enhanced metadata for basic simulation
+node simulate_iot.js --no-enrich-metadata
+
+# Combined with other options
+node simulate_iot.js --iterations=20 --delay=500 --verbose --enrich-metadata
 ```
 
 ## Environment Configuration
@@ -103,7 +147,8 @@ To configure your environment:
 
 ```
 IOT-Dashboards/
-├── simulate_iot.js         # Node.js IoT data simulation script
+├── simulate_iot.js         # Enhanced IoT data simulation script
+├── simulate_iot_enhanced.js # Alternative enhanced version (reference)
 ├── package.json            # Node.js dependencies and scripts
 ├── .env.example           # Environment variables template
 ├── docs/

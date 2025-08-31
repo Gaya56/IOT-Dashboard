@@ -6,6 +6,7 @@
   "scripts": {
     "simulate": "node simulate_iot.js",
     "simulate:verbose": "node simulate_iot.js --verbose",
+    "simulate:basic": "node simulate_iot.js --no-enrich-metadata",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
