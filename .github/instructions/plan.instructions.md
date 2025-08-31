@@ -1,7 +1,6 @@
 ---
 applyTo: '**/home/ali/Documents/IOT-Dashboards'
 ---
-Provide project context and coding guidelines that AI should follow when generating code, answering questions, or reviewing changes.
 
 # IoT Dashboard Development Plan
 
@@ -14,29 +13,24 @@ A comprehensive guide for building an IoT monitoring dashboard with Supabase bac
 ### MCP Server Utilization Requirements
 For EVERY prompt and step, AI MUST use ALL available MCP servers:
 
-1. **🔧 Sequential Thinking MCP**: Plan, analyze, and organize complex tasks through structured thinking
+1. **🔧 Sequential Thinking MCP**: Plan, analyze, and organize complex tasks
 2. **🗃️ Supabase MCP**: Database operations, migrations, queries, and testing
-3. **🔍 Brave Search MCP**: Verify official documentation, best practices, and industry standards
-4. **📁 Filesystem MCP**: File operations, reading, writing, and directory management
-5. **🧠 Memory MCP**: Track progress, store insights, and maintain project knowledge
+3. **🔍 Brave Search MCP**: Verify official documentation and best practices
+4. **📁 Filesystem MCP**: File operations, reading, writing, directory management
+5. **🧠 Memory MCP**: Track progress, store insights, maintain project knowledge
 
 ### 🔍 COMPREHENSIVE TESTING PROTOCOL
 **Before Every Step:**
 - Validate current project state using filesystem and supabase MCPs
-- Verify prerequisites and dependencies
 - Search for latest best practices using brave search MCP
 - Record current status in memory MCP
 
 **After Every Step:**
 - Test functionality using appropriate MCP servers
 - Validate data integrity in Supabase
-- Verify file changes and code quality
 - Update memory with completion status and lessons learned
-- Create comprehensive step summary
 
 ### 📋 STEP COMPLETION SUMMARY FORMAT
-
-**At the top of every response, include:**
 
 ```markdown
 ## ✅ Step [X] Summary: [Step Name]
@@ -44,13 +38,11 @@ For EVERY prompt and step, AI MUST use ALL available MCP servers:
 **🎯 Objectives Completed:**
 - [ ] Objective 1
 - [ ] Objective 2
-- [ ] Objective 3
 
 **🧪 Testing Results:**
 - [ ] Pre-step validation: PASS/FAIL
 - [ ] Implementation: PASS/FAIL
 - [ ] Post-step testing: PASS/FAIL
-- [ ] Documentation updated: PASS/FAIL
 
 **📊 Project Overview Checklist:**
 - [ ] Database Schema (Step 2)
@@ -58,8 +50,8 @@ For EVERY prompt and step, AI MUST use ALL available MCP servers:
 - [ ] Node.js Environment (Step 4)
 - [ ] IoT Simulation (Step 5)
 - [ ] Enhanced Metadata (Step 6)
-- [ ] Dashboard Frontend (Step 7)
-- [ ] Realtime Features (Step 8)
+- [ ] Analytics & Health Monitoring (Step 7)
+- [ ] Dashboard Frontend (Step 8)
 
 **🔧 MCP Servers Used:**
 - [ ] Sequential Thinking: Planning and analysis
@@ -69,56 +61,46 @@ For EVERY prompt and step, AI MUST use ALL available MCP servers:
 - [ ] Memory: Progress tracking
 
 **💡 Key Insights:**
-- Technical learnings
-- Best practices applied
-- Issues resolved
+- Technical learnings and issues resolved
 
 **🚀 Next Steps:**
 - Immediate next actions
-- Prerequisites for next step
 ```
 
 ### 🏆 INDUSTRY STANDARDS COMPLIANCE
 All development must follow 2025 IoT best practices:
 - **Standards Compliance**: Matter, ISO/IEC 30141, OWASP IoT Top 10
-- **CI/CD Integration**: Automated testing in deployment workflows
-- **Security Standards**: HIPAA (healthcare), GDPR (data privacy), ISO (industrial)
+- **Security Standards**: HIPAA, GDPR, ISO compliance
 - **Testing Tools**: IoT simulators for controlled environments
-- **Documentation**: Comprehensive traceability and issue tracking
 
 ## Plan Overview
 
-1. **Create Supabase project + get API URL & keys** (Settings → API). ([Supabase][1])
-2. **Create database schema** (SQL Editor). Keep names lowercase\_with\_underscores. ([Supabase][2])
-3. **Enable RLS + policies** for secure data access. ([Supabase][3])
-4. **Node.js simulation setup**: environment configuration and dependency management.
-5. **IoT data simulation** with automated sensor data generation.
-6. **Testing and validation** of data insertion and retrieval.
-7. **(Optional) Realtime** for live monitoring. ([Supabase][4])
-8. **Later**: advanced features like alerting (SQL triggers or edge functions).
+1. **Create Supabase project + get API URL & keys**
+2. **Create database schema** (lowercase_with_underscores)
+3. **Enable RLS + policies** for secure data access
+4. **Node.js simulation setup**: environment configuration
+5. **IoT data simulation** with automated sensor data generation
+6. **Enhanced metadata features** with device registry and health monitoring
+7. **Analytics & health monitoring** with automated summary tables
+8. **Dashboard frontend** with real-time monitoring and visualization
+9. **Advanced features**: alerting, AI integration, and edge functions
 
 ---
 
-## Step 1 — Supabase Project & API Keys (≤150 words)
+## Step 1 — Supabase Project & API Keys
 
-1. Go to **app.supabase.com → New project**.
-2. After project creation: **Settings → API**. Copy:
-
+1. Go to **app.supabase.com → New project**
+2. **Settings → API**, copy:
    * **Project URL** (base URL for API calls)
    * **anon** key (public key for client-side access)
 
-Environment variables needed:
-
+Environment variables:
 * `SUPABASE_URL = <Project URL>`
 * `SUPABASE_ANON_KEY = <anon key>`
-
-Keep this information secure and use environment variables for configuration. ([Supabase][1])
 
 ---
 
 ## Step 2 — Database Schema Creation
-
-**SQL** to create the IoT events table:
 
 ```sql
 create table public.iot_events (
@@ -137,25 +119,18 @@ create policy "allow_anon_update" on public.iot_events for update to anon using 
 create policy "allow_anon_delete" on public.iot_events for delete to anon using (true);
 ```
 
-([Supabase][2])
-
 ---
 
 ## Step 3 — Node.js Environment Setup
 
-1. **Initialize Node.js project**:
+1. **Initialize project**:
    ```bash
    npm init -y
    npm install axios dotenv
    npm install --save-dev nodemon
    ```
 
-2. **Create environment configuration**:
-   - Copy `.env.example` to `.env`
-   - Add your Supabase credentials
-   - Ensure `.env` is in `.gitignore`
-
-3. **Package.json scripts**:
+2. **Package.json scripts**:
    ```json
    {
      "scripts": {
@@ -170,45 +145,103 @@ create policy "allow_anon_delete" on public.iot_events for delete to anon using 
 
 ## Step 4 — IoT Data Simulation
 
-Create `simulate_iot.js` for automated sensor data generation:
-
+Create `simulate_iot.js` with:
 - **Six sensor types**: temperature, door, card, humidity, motion, smoke
-- **Realistic data ranges**: appropriate values for each sensor type
-- **Configurable parameters**: iterations, delay, verbose logging
-- **Error handling**: robust HTTP request handling and validation
-- **Verification**: query database to confirm data insertion
+- **Realistic data ranges** and configurable parameters
+- **Error handling** and database verification
 
 ### Sensor Data Specifications:
 
-| Type | Value Range | Status Examples | Metadata Fields |
-|------|-------------|----------------|----------------|
-| Temperature | 10-35°C | active, inactive | location, unit, calibration |
-| Door | 0/1 (closed/open) | open, closed | entrance, door_type, access_level |
-| Card | 8-digit numbers | read_success, read_error | scanner, card_type, encryption |
-| Humidity | 0-100% | normal, high_humidity | zone, unit, sensor_model |
-| Motion | 0/1 (no motion/detected) | motion_detected, no_motion | corridor, range, sensitivity |
-| Smoke | 0-10 ppm | safe, alert | fire_zone, unit, alarm_threshold |
+| Type | Value Range | Status Examples |
+|------|-------------|----------------|
+| Temperature | 10-35°C | active, inactive |
+| Door | 0/1 (closed/open) | open, closed |
+| Card | 8-digit numbers | read_success, read_error |
+| Humidity | 0-100% | normal, high_humidity |
+| Motion | 0/1 (no motion/detected) | motion_detected, no_motion |
+| Smoke | 0-10 ppm | safe, alert |
 
 ---
 
 ## Step 5 — Testing and Validation
 
-1. **Run simulation**:
-   ```bash
-   npm run simulate
-   # or with custom parameters
-   node simulate_iot.js --iterations=50 --delay=200 --verbose
-   ```
+1. **Run simulation**: `npm run simulate`
+2. **Verify data**: Check Supabase dashboard, validate formats
+3. **Performance testing**: Monitor API response times
 
-2. **Verify data insertion**:
-   - Check Supabase dashboard table view
-   - Query recent records via SQL
-   - Validate sensor data formats and ranges
+---
 
-3. **Performance testing**:
-   - Test with different iteration counts
-   - Monitor API response times
-   - Verify error handling
+## Step 6 — Enhanced Metadata Features
+
+### Enhanced Metadata Fields
+- **device_name**: Human-friendly device names
+- **location**: Realistic room/zone identifiers
+- **battery_level**: Current battery percentage (0-100%)
+- **last_calibration**: Recent calibration date
+- **manufacturer**: Random manufacturer from predefined companies
+- **system_health**: Health status ('good', 'warning', 'critical')
+
+### Device Registry System
+- **Consistent Metadata**: Same device properties across runs
+- **Battery Degradation**: Realistic simulation with degradation
+- **Health Calculation**: Based on battery levels and sensor readings
+- **Configuration**: `--enrich-metadata` (default), `--no-enrich-metadata` for compatibility
+
+---
+
+## Step 7 — Analytics & Health Monitoring
+
+### Summary Tables
+
+#### sensor_stats Table
+```sql
+create table public.sensor_stats (
+  type text primary key,
+  event_count bigint default 0,
+  min_value numeric,
+  max_value numeric,
+  avg_value numeric,
+  last_updated timestamptz default now()
+);
+```
+
+#### device_health Table
+```sql
+create table public.device_health (
+  device_id text primary key,
+  latest_battery_level numeric,
+  last_calibration timestamptz,
+  manufacturer text,
+  health_status text check (health_status in ('good', 'warning', 'critical')),
+  last_updated timestamptz default now()
+);
+```
+
+### Trigger Functions
+- **update_sensor_stats()**: Updates aggregated sensor statistics
+- **update_device_health()**: Maintains current device health status
+- **Row-level triggers**: Execute on each `iot_events` insert/update
+
+### Analytics Script
+Create `analyze_data.js` with:
+- **Summary Statistics**: Total events, sensor distributions, battery analytics
+- **Health Monitoring**: Device status overview, maintenance alerts
+- **Report Generation**: Console output, JSON/Markdown exports
+- **Command-line Options**: `--report-file`, `--format`, `--verbose`
+
+---
+
+## Step 8 — Dashboard Frontend
+
+### Core Features
+- **Real-time Data**: Live sensor readings and device status
+- **Interactive Charts**: Time series, distributions, health metrics
+- **Device Management**: Individual monitoring and alerts
+
+### Technical Implementation
+- **Frontend Framework**: React/Vue.js with modern architecture
+- **Real-time Updates**: Supabase real-time subscriptions
+- **Data Visualization**: Chart.js/D3.js for interactive analytics
 
 ---
 
@@ -216,7 +249,7 @@ Create `simulate_iot.js` for automated sensor data generation:
 
 ### Code Standards
 - Use `async/await` for asynchronous operations
-- Implement proper error handling with try-catch blocks
+- Implement comprehensive error handling with try-catch blocks
 - Include meaningful console logging for debugging
 - Follow Node.js best practices for environment configuration
 
@@ -232,7 +265,7 @@ Create `simulate_iot.js` for automated sensor data generation:
 - Store configuration templates as `.example` files
 - Maintain clear README with setup instructions
 
-[1]: https://supabase.com/docs/guides/api/creating-routes?utm_source=chatgpt.com "Creating API Routes | Supabase Docs"
-[2]: https://supabase.com/docs/guides/database/tables?utm_source=chatgpt.com "Tables and Data | Supabase Docs"
-[3]: https://supabase.com/docs/guides/database/postgres/row-level-security?utm_source=chatgpt.com "Row Level Security | Supabase Docs"
-[4]: https://supabase.com/docs/guides/realtime/postgres-changes?utm_source=chatgpt.com "Postgres Changes | Supabase Docs"
+[1]: https://supabase.com/docs/guides/api/creating-routes "Creating API Routes | Supabase Docs"
+[2]: https://supabase.com/docs/guides/database/tables "Tables and Data | Supabase Docs"
+[3]: https://supabase.com/docs/guides/database/postgres/row-level-security "Row Level Security | Supabase Docs"
+[4]: https://supabase.com/docs/guides/realtime/postgres-changes "Postgres Changes | Supabase Docs"
