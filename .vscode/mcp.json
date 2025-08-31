@@ -1,5 +1,12 @@
 {
 	"servers": {
+		"postman-api-http-server": {
+			"type": "sse",
+			"url": "https://mcp.postman.com/mcp",
+			"headers": {
+				"Authorization": "Bearer ${input:postman-api-key}"
+			}
+		},
 		"supabase": {
 			"command": "npx",
 			"args": [
@@ -40,6 +47,12 @@
 		}
 	},
 	"inputs": [
+		{
+			"id": "postman-api-key",
+			"type": "promptString",
+			"description": "Enter your Postman API key",
+			"password": true
+		},
 		{
 			"type": "promptString",
 			"id": "supabase-access-token",
