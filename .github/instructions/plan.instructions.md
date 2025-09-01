@@ -3,21 +3,15 @@ applyTo: '**/home/ali/Documents/IOT-Dashboards'
 
 ---
 
-# 📘 IoT Dashboard Instruction Manual (Updated)
-## 📋 Short Overview
 
-* **Goal**: Set up the **Supabase CLI** (understand its purpose, install, init, start local stack, confirm connectivity), then move to **AI integration** via a Supabase **Edge Function** that uses built-in AI models for embeddings—referencing only official docs.
-* **Docs to follow**:
-  * CLI: [https://supabase.com/docs/guides/local-development/cli/getting-started](https://supabase.com/docs/guides/local-development/cli/getting-started)
-  * AI models in functions: [https://supabase.com/docs/guides/functions/ai-models](https://supabase.com/docs/guides/functions/ai-models)
-* **CLI Checklist**: `npx supabase --help` → `supabase init` → `supabase start` (Docker running) → set env (`SUPABASE_URL`, keys) → quick DB sanity (`select now();`, insert 1 test row into `iot_events`).
-* **AI Next**: Scaffold `supabase functions new embedder`, call `Supabase.ai.Session('gte-small')`, deploy/serve, send a test request, store an embedding row.
-* **Agent behavior**: Use **brave-search** only to verify those two official doc URLs; save short summaries + JSON to `_reports/` after each step; keep it minimal and safe.
-* **Context**: Fits our updated instruction manual and step discipline.
 
-When you're ready, I'll draft **Prompt 1** (CLI setup + quick connection test) exactly against the official docs and our rules.
+# 📘 IoT Dashboard — AI Integration (Edge Functions + AI Models)
 
-## 🔑 Global Rules
+> **Purpose:** Add a simple, official-docs-only AI embedding function using Supabase Edge Functions. Keep setup minimal, verify each step against the **official website** with **brave-search**, and record concise results in `_reports/`. (Builds on our existing instruction manual.)&#x20;
+
+---
+
+## 🔑 Global Rules (must follow every step)
 
 * **Always first**:
 
@@ -38,61 +32,92 @@ When you're ready, I'll draft **Prompt 1** (CLI setup + quick connection test) e
 
 ---
 
-## 🚀 Phase 1 — Supabase CLI Setup
+## 🧭 Pre‑flight
 
-1. Install/verify CLI: `npx supabase --help`
+1. With **brave-search**, open and **read**:
 
-   * Doc: [Supabase CLI Getting Started](https://supabase.com/docs/guides/local-development/cli/getting-started)
-2. Init & start local stack: `supabase init` → `supabase start` (ensure Docker running).
-3. Validate schema matches reports + deep dive step.
-
----
-
-## 🧠 Phase 2 — Database Schema & Security
-
-* Ensure schema matches Step 2 of the plan.
-* Validate RLS policies enabled.
-* Doc: [Tables and Data](https://supabase.com/docs/guides/database/tables), [Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security).
+   * **AI Models in Functions**: [https://supabase.com/docs/guides/functions/ai-models](https://supabase.com/docs/guides/functions/ai-models)
+   * **Edge Functions Overview**: [https://supabase.com/docs/guides/functions](https://supabase.com/docs/guides/functions)
+   * **Serve locally**: [https://supabase.com/docs/guides/functions/serve](https://supabase.com/docs/guides/functions/serve)
+   * **Deploy functions**: [https://supabase.com/docs/guides/functions/deploy](https://supabase.com/docs/guides/functions/deploy)
+   * **Manage secrets**: [https://supabase.com/docs/guides/functions/secrets](https://supabase.com/docs/guides/functions/secrets)
+   * **CLI reference (functions)**: [https://supabase.com/docs/reference/cli](https://supabase.com/docs/reference/cli)
+2. Confirm local stack is up (CLI): `npx supabase --help`, `supabase start`.
 
 ---
 
-## ⚙️ Phase 3 — IoT Simulation & Metadata
+## 🚀 Phase A — Scaffold a Minimal AI Function
 
-* Run `npm run simulate` to insert sample events.
-* Validate in Supabase dashboard.
-* Add enhanced metadata (battery, calibration, manufacturer, health).
-* Doc: [Postgres Changes & Realtime](https://supabase.com/docs/guides/realtime/postgres-changes).
+1. **Scaffold** (CLI):
 
----
+   ```bash
+   supabase functions new embedder
+   ```
+2. **Verify docs** (brave-search → *AI Models in Functions*). Copy the **official sample** that creates a session (e.g., model `"gte-small"`) and returns embeddings.
+3. **Implement** in `functions/embedder/index.ts` (or `.ts/.js`) exactly as shown in docs.
 
-## 📊 Phase 4 — Analytics & Health Monitoring
+   * Keep handler tiny: accept `{ input }`, run model, return JSON.
+   * **Do not** print secrets.
 
-* Confirm triggers update `sensor_stats` + `device_health`.
-* Run `analyze_data.js` to generate updated `_reports/analysis.json`.
-
----
-
-## 🖥️ Phase 5 — Dashboard Frontend
-
-* Implement real-time subscriptions for charts & device health.
-* Doc: [Creating API Routes](https://supabase.com/docs/guides/api/creating-routes).
+**Artifacts:** `_reports/ai_fn_scaffold.md` (what you created + links used).
 
 ---
 
-## 🧪 Step Completion Summary (Template)
+## 🧪 Phase B — Local Test (Serve)
 
-```
-## ✅ Step [X] Summary: [Name]
-- Objectives completed
-- Schema & _reports check: PASS/FAIL
-- Supabase test insert: PASS/FAIL
-- App smoke test: PASS/FAIL
-- Docs referenced: [links]
-- MCPs used: ST | SB | BS | FS | MEM
-- Key insights
-- Next step
-```
+1. **Serve** locally (docs):
+
+   ```bash
+   supabase functions serve --env-file /home/ali/Documents/IOT-Dashboards/.env
+   ```
+
+   (Use the docs’ flags as required; if JWT verification is needed, follow the guide.)
+2. **Call** the function with a tiny payload (docs show curl example). Save response.
+3. **Optional**: write a minimal `event_embeddings` table (JSONB) and store one embedding linked to a test `iot_events.id` (keep it simple; no schema changes if not needed).
+
+**Artifacts:** `_reports/ai_fn_local_test.json` (request/response, redacted).
 
 ---
 
-Do you want me to now **turn this into an Agent Prompt (mode: agent)** so your Copilot automatically enforces the “deep dive architecture + reports check” at the start of every step?
+## ☁️ Phase C — Deploy & Secrets
+
+1. **Set secrets** (docs):
+
+   ```bash
+   supabase functions secrets set SUPABASE_URL=... SUPABASE_ANON_KEY=...
+   ```
+
+   *(Only what the docs require. Never print values.)*
+2. **Deploy** (docs):
+
+   ```bash
+   supabase functions deploy embedder
+   ```
+3. **Test** the deployed function with a small request (docs example). Log latency + status.
+
+**Artifacts:** `_reports/ai_fn_deploy_test.md` (endpoint, status, doc links).
+
+---
+
+## ✅ Success Criteria
+
+* AI function responds locally **and** when deployed (HTTP 200, valid JSON).
+* Steps traced to the **official docs** (URLs captured in reports).
+* No secrets leaked; repo remains minimal.
+* Post‑step DB insert + smoke tests completed and logged.
+
+---
+
+## 🔗 Official Docs (reference these via brave-search each step)
+
+* AI Models in Functions: [https://supabase.com/docs/guides/functions/ai-models](https://supabase.com/docs/guides/functions/ai-models)
+* Functions Overview: [https://supabase.com/docs/guides/functions](https://supabase.com/docs/guides/functions)
+* Serve Locally: [https://supabase.com/docs/guides/functions/serve](https://supabase.com/docs/guides/functions/serve)
+* Deploy Functions: [https://supabase.com/docs/guides/functions/deploy](https://supabase.com/docs/guides/functions/deploy)
+* Function Secrets: [https://supabase.com/docs/guides/functions/secrets](https://supabase.com/docs/guides/functions/secrets)
+* CLI Reference (functions): [https://supabase.com/docs/reference/cli](https://supabase.com/docs/reference/cli)
+* JavaScript Client (for functions if needed): [https://supabase.com/docs/reference/javascript/install](https://supabase.com/docs/reference/javascript/install)
+
+---
+
+**Keep it simple.** Verify with official docs **before** executing each command, execute, then summarize and move on.
