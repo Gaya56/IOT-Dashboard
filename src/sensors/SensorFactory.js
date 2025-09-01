@@ -136,6 +136,34 @@ class CardSensor extends BaseSensor {
     }
 }
 
+class SmokeSensor extends BaseSensor {
+    generateReading() {
+        return Math.round((1.0 + Math.random() * 9.0) * 100) / 100; // 1.0-10.0 concentration
+    }
+    
+    getStatus(reading) {
+        if (reading > 7.0) return 'smoke_detected';
+        if (reading > 5.0) return 'elevated_smoke';
+        return 'normal';
+    }
+    
+    generateEvent() {
+        const reading = this.generateReading();
+        return {
+            device_id: this.deviceId,
+            type: 'smoke',
+            value: reading,
+            status: this.getStatus(reading),
+            metadata: {
+                ...this.generateBaseMetadata(),
+                unit: 'concentration',
+                sensor_type: 'photoelectric',
+                alarm_threshold: '7.0'
+            }
+        };
+    }
+}
+
 class SensorFactory {
     static createSensor(device) {
         const sensorMap = {
@@ -146,7 +174,8 @@ class SensorFactory {
             'pressure': PressureSensor,
             'motion': MotionSensor,
             'door': DoorSensor,
-            'card': CardSensor
+            'card': CardSensor,
+            'smoke': SmokeSensor
         };
         
         const SensorClass = sensorMap[device.type_name];
@@ -158,7 +187,7 @@ class SensorFactory {
     }
     
     static getSupportedTypes() {
-        return ['temperature', 'vibration', 'gas', 'humidity', 'pressure', 'motion', 'door', 'card'];
+        return ['temperature', 'vibration', 'gas', 'humidity', 'pressure', 'motion', 'door', 'card', 'smoke'];
     }
 }
 
