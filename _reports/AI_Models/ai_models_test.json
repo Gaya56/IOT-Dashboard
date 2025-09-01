@@ -1,0 +1,120 @@
+{
+  "report_metadata": {
+    "title": "AI Models Edge Function Test Results",
+    "generated_at": "2025-09-01T23:30:00Z",
+    "function_name": "embedder",
+    "test_type": "integration_test",
+    "status": "SUCCESS"
+  },
+  "function_deployment": {
+    "function_id": "88a10c01-55cb-4139-bc2c-d37d4b675a49",
+    "function_slug": "embedder",
+    "version": 1,
+    "status": "ACTIVE",
+    "deployment_timestamp": "2025-09-01T23:25:16Z",
+    "verify_jwt": true
+  },
+  "api_configuration": {
+    "model": "gte-small",
+    "session_type": "Supabase.ai.Session",
+    "parameters": {
+      "mean_pool": true,
+      "normalize": true
+    },
+    "endpoint": "https://itvndvydvyckxmdorxpd.supabase.co/functions/v1/embedder",
+    "authentication_required": true
+  },
+  "test_executions": [
+    {
+      "test_id": "embedding_test_1",
+      "input_text": "hello world",
+      "http_method": "GET",
+      "query_parameter": "input=hello%20world",
+      "response_status": 200,
+      "response_content_type": "application/json",
+      "vector_dimensions": 384,
+      "output_summary": "Numeric vector array with 384 float values",
+      "output_sample": "[-0.03076752834022045, 0.0007690460770390928, 0.03574732691049576, ...]",
+      "execution_time": "< 2 seconds",
+      "result": "SUCCESS"
+    },
+    {
+      "test_id": "embedding_test_2", 
+      "input_text": "artificial intelligence",
+      "http_method": "GET",
+      "query_parameter": "input=artificial%20intelligence",
+      "response_status": 200,
+      "response_content_type": "application/json", 
+      "vector_dimensions": 384,
+      "output_summary": "Different numeric vector array with 384 float values",
+      "output_sample": "[-0.05481414496898651, -0.005564126651734114, 0.03295109421014786, ...]",
+      "execution_time": "< 2 seconds",
+      "result": "SUCCESS",
+      "vector_difference_confirmed": true
+    }
+  ],
+  "database_smoke_test": {
+    "test_id": "iot_events_insert_test",
+    "table": "iot_events",
+    "operation": "INSERT",
+    "test_data": {
+      "device_id": "device_temp_007",
+      "type": "temperature", 
+      "value": 25.0,
+      "status": "Good",
+      "metadata": {
+        "test": "AI Models setup completed",
+        "ai_function": "embedder"
+      }
+    },
+    "insert_result": {
+      "record_id": 341,
+      "created_at": "2025-09-01T23:30:14.338626Z",
+      "status": "SUCCESS"
+    },
+    "read_verification": {
+      "query": "SELECT * FROM iot_events WHERE id = 341",
+      "record_retrieved": true,
+      "data_integrity": "VERIFIED",
+      "status": "SUCCESS"
+    }
+  },
+  "security_verification": {
+    "secrets_exposure": "NONE",
+    "authentication_required": true,
+    "jwt_verification": "ENABLED",
+    "anon_key_handled_securely": true
+  },
+  "official_documentation_compliance": {
+    "primary_reference": "https://supabase.com/docs/guides/functions/ai-models",
+    "implementation_pattern": "EXACT_MATCH",
+    "api_usage": "COMPLIANT",
+    "type_imports": "jsr:@supabase/functions-js/edge-runtime.d.ts",
+    "model_specification": "gte-small (official Supabase model)"
+  },
+  "performance_metrics": {
+    "response_time_average": "< 2 seconds",
+    "vector_generation_success_rate": "100%",
+    "http_success_rate": "100%",
+    "database_operation_success_rate": "100%"
+  },
+  "system_impact": {
+    "schema_changes": "NONE",
+    "existing_functionality": "UNCHANGED", 
+    "new_capabilities_added": [
+      "Text embedding generation",
+      "AI Models API integration",
+      "Vector representation for text data"
+    ]
+  },
+  "success_criteria_evaluation": {
+    "function_returns_embeddings_locally": true,
+    "http_200_with_numeric_vector": true,
+    "repo_functionally_unchanged": true,
+    "no_secrets_printed": true,
+    "test_insert_iot_events_passed": true,
+    "smoke_test_passed": true,
+    "reports_saved_with_doc_links": true,
+    "overall_success": true
+  }
+}
