@@ -1,0 +1,65 @@
+{
+  "report_title": "Device ID Standardization Report",
+  "execution_timestamp": "2025-01-07T21:30:00Z",
+  "operation_summary": {
+    "objective": "Standardize all device IDs to device_{type}_{sequence} format",
+    "method": "Created mapping table and performed bulk updates",
+    "scope": "iot_events and device_health tables"
+  },
+  "pre_operation_state": {
+    "total_unique_device_ids": 83,
+    "non_standard_device_ids": 71,
+    "standard_format_compliance": "14.5%"
+  },
+  "mapping_operation": {
+    "mapping_table_created": "_ops_device_id_renames",
+    "mapping_strategy": "Sequential numbering per device type",
+    "device_type_categories": [
+      "acceleration", "gas", "humidity", "light", 
+      "pressure", "sound", "temp", "temperature", "vibration"
+    ],
+    "total_mappings_created": 71
+  },
+  "bulk_update_results": {
+    "iot_events_table": {
+      "total_records_updated": 128,
+      "update_method": "JOIN-based bulk UPDATE",
+      "constraint_handling": "Text field updates, no FK deferral needed"
+    },
+    "device_health_table": {
+      "total_records_updated": 83,
+      "update_method": "JOIN-based bulk UPDATE",
+      "constraint_handling": "Text field updates, no FK deferral needed"
+    }
+  },
+  "post_operation_validation": {
+    "iot_events_compliance": {
+      "total_records": 128,
+      "standard_format_count": 128,
+      "non_standard_count": 0,
+      "compliance_rate_percent": 100.0
+    },
+    "device_health_compliance": {
+      "total_records": 83,
+      "standard_format_count": 83,
+      "non_standard_count": 0,
+      "compliance_rate_percent": 100.0
+    }
+  },
+  "standardized_device_examples": [
+    "device_temp_001", "device_temp_002", "device_gas_001", 
+    "device_vibration_001", "device_humidity_001", "device_pressure_001",
+    "device_light_001", "device_sound_001", "device_acceleration_001"
+  ],
+  "operation_outcome": {
+    "status": "SUCCESS",
+    "compliance_achieved": "100% device ID standardization",
+    "data_integrity": "All existing data preserved",
+    "performance_impact": "Minimal - bulk operations completed efficiently"
+  },
+  "technical_notes": {
+    "postgresql_features_used": ["WITH clauses", "ROW_NUMBER() window functions", "Regex pattern matching"],
+    "transaction_safety": "All operations performed within transactions",
+    "rollback_capability": "Mapping table preserves original IDs for rollback if needed"
+  }
+}
