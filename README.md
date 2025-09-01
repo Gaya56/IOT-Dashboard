@@ -6,18 +6,28 @@ A real-time IoT monitoring dashboard built with Supabase backend for collecting 
 
 This project provides a comprehensive IoT data collection and monitoring system that can handle multiple types of sensors including:
 
+### Standard Sensors
+
 - Temperature sensors
-- Door sensors
+- Door sensors  
 - Card readers
 - Humidity sensors
 - Motion detectors
 - Smoke detectors
 
+### Manufacturing Sensors (Step 9 Enhancement)
+
+- Vibration monitors
+- Gas detectors
+
 ## Features
 
 - **Node.js Data Simulation**: Automated IoT sensor data generation and transmission
+- **Manufacturing Simulation**: Enhanced simulation with device registry and pattern detection
 - **Real-time Data Collection**: Live sensor data ingestion via REST API
 - **Supabase Backend**: Robust PostgreSQL database with Row Level Security
+- **Device Registry**: Comprehensive device management with manufacturers, locations, and metadata
+- **Anomaly Detection**: Pattern-based monitoring for equipment maintenance
 - **API Documentation**: Comprehensive API reference for all operations
 - **Flexible Schema**: JSONB metadata support for extensible device information
 - **Configurable Simulation**: Customizable iterations, delays, and sensor types
@@ -50,14 +60,19 @@ This project provides a comprehensive IoT data collection and monitoring system 
 
 4. **Run IoT simulation**
    ```bash
-   # Default: 20 iterations, 500ms delay
+   # Default simulation: 20 iterations, 500ms delay
    npm run simulate
+   
+   # Manufacturing simulation (Step 9 Enhancement)
+   node simulate_manufacturing.js --iterations=20 --verbose
    
    # Custom configuration
    node simulate_iot.js --iterations=50 --delay=200 --verbose
    ```
 
 ## IoT Data Simulation
+
+### Standard Simulation
 
 The `simulate_iot.js` script generates realistic sensor data for six device types:
 
@@ -70,7 +85,36 @@ The `simulate_iot.js` script generates realistic sensor data for six device type
 | Motion | 0 (no motion) / 1 (detected) | motion_detected, no_motion | corridor, range, sensitivity |
 | Smoke | 0-10 ppm | safe, alert | fire_zone, unit, alarm_threshold |
 
-### Simulation Commands
+### Manufacturing Simulation (Step 9)
+
+The `simulate_manufacturing.js` script provides an enhanced simulation system with:
+
+- **Device Registry**: Persistent device metadata with manufacturers, locations, and battery tracking
+- **Additional Sensors**: Vibration monitors and gas detectors for industrial environments
+- **Pattern Detection**: Anomaly detection for predictive maintenance
+- **Modular Architecture**: Object-oriented sensor classes with inheritance
+
+#### Manufacturing Sensor Types
+
+| Sensor Type | Value Range | Status Examples | Special Features |
+|-------------|-------------|-----------------|------------------|
+| Vibration | 0-10g amplitude | normal, warning, critical | Equipment monitoring, maintenance alerts |
+| Gas | 0-1000 ppm | safe, warning, danger | Air quality monitoring, safety systems |
+
+#### Manufacturing Command Examples
+
+```bash
+# Basic manufacturing simulation
+node simulate_manufacturing.js --iterations=20
+
+# Verbose output with device details
+node simulate_manufacturing.js --iterations=50 --verbose --delay=1000
+
+# Quick test run
+node simulate_manufacturing.js --iterations=5 --verbose
+```
+
+### Standard Simulation Commands
 
 ```bash
 # Basic simulation with enhanced metadata (default)

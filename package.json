@@ -1,12 +1,23 @@
 {
   "name": "iot-dashboard",
-  "version": "1.0.0",
-  "description": "A real-time IoT monitoring dashboard built with Supabase for collecting and visualizing sensor data from various IoT devices.",
-  "main": "simulate_iot.js",
+  "version": "1.1.0",
+  "description": "A real-time IoT monitoring dashboard built with Supabase for collecting and visualizing sensor data from various IoT devices in manufacturing environments.",
+  "main": "simulate_manufacturing.js",
   "scripts": {
     "simulate": "node simulate_iot.js",
     "simulate:verbose": "node simulate_iot.js --verbose",
     "simulate:basic": "node simulate_iot.js --no-enrich-metadata",
+    "manufacturing": "node simulate_manufacturing.js",
+    "manufacturing:verbose": "node simulate_manufacturing.js --verbose",
+    "manufacturing:quick": "node simulate_manufacturing.js --iterations=10 --delay=200",
+    "manufacturing:temperature": "node simulate_manufacturing.js --device-type=temperature --verbose",
+    "manufacturing:vibration": "node simulate_manufacturing.js --device-type=vibration --verbose",
+    "manufacturing:gas": "node simulate_manufacturing.js --device-type=gas --verbose",
+    "manufacturing:long": "node simulate_manufacturing.js --iterations=100 --delay=1000",
+    "analytics": "node analyze_data.js",
+    "analytics:verbose": "node analyze_data.js --verbose",
+    "analytics:json": "node analyze_data.js --format=json --report-file=analytics_report.json",
+    "analytics:markdown": "node analyze_data.js --format=markdown --report-file=analytics_report.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,7 +26,12 @@
     "sensors",
     "monitoring",
     "dashboard",
-    "real-time"
+    "real-time",
+    "manufacturing",
+    "industrial",
+    "vibration",
+    "gas-detection",
+    "anomaly-detection"
   ],
   "author": "IoT Dashboard Project",
   "license": "MIT",
@@ -25,5 +41,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
