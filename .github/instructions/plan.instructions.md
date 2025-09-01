@@ -4,6 +4,18 @@ applyTo: '**/home/ali/Documents/IOT-Dashboards'
 ---
 
 # 📘 IoT Dashboard Instruction Manual (Updated)
+## 📋 Short Overview
+
+* **Goal**: Set up the **Supabase CLI** (understand its purpose, install, init, start local stack, confirm connectivity), then move to **AI integration** via a Supabase **Edge Function** that uses built-in AI models for embeddings—referencing only official docs.
+* **Docs to follow**:
+  * CLI: [https://supabase.com/docs/guides/local-development/cli/getting-started](https://supabase.com/docs/guides/local-development/cli/getting-started)
+  * AI models in functions: [https://supabase.com/docs/guides/functions/ai-models](https://supabase.com/docs/guides/functions/ai-models)
+* **CLI Checklist**: `npx supabase --help` → `supabase init` → `supabase start` (Docker running) → set env (`SUPABASE_URL`, keys) → quick DB sanity (`select now();`, insert 1 test row into `iot_events`).
+* **AI Next**: Scaffold `supabase functions new embedder`, call `Supabase.ai.Session('gte-small')`, deploy/serve, send a test request, store an embedding row.
+* **Agent behavior**: Use **brave-search** only to verify those two official doc URLs; save short summaries + JSON to `_reports/` after each step; keep it minimal and safe.
+* **Context**: Fits our updated instruction manual and step discipline.
+
+When you're ready, I'll draft **Prompt 1** (CLI setup + quick connection test) exactly against the official docs and our rules.
 
 ## 🔑 Global Rules
 
