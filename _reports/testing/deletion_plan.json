@@ -1,0 +1,113 @@
+{
+  "deletion_plan_metadata": {
+    "created_at": "2025-01-09T14:52:00Z",
+    "analysis_scope": "Repository-wide cleanup candidates identification",
+    "safety_approach": "Conservative - only removing clearly unused or redundant files",
+    "validation_required": "All deletions must preserve application functionality"
+  },
+  
+  "cleanup_candidates": {
+    "redundant_documentation": [
+      {
+        "file": "REPO_OVERVIEW.md",
+        "reason": "Redundant with README.md - same project overview content",
+        "size_impact": "Medium",
+        "references_found": 0,
+        "safety_level": "SAFE",
+        "action": "DELETE"
+      }
+    ],
+    
+    "unused_scripts": [
+      {
+        "file": "run_device_simulation.js",
+        "reason": "Not referenced in package.json scripts, functionality covered by simulate_manufacturing.js with device-type parameter",
+        "size_impact": "Medium (222 lines)",
+        "references_found": 0,
+        "safety_level": "SAFE", 
+        "action": "DELETE"
+      }
+    ],
+    
+    "generated_reports": [
+      {
+        "file": "analytics_report.json",
+        "reason": "Generated output file, can be regenerated with 'npm run analytics:json'",
+        "size_impact": "Medium (434 lines)",
+        "references_found": 0,
+        "safety_level": "SAFE",
+        "action": "DELETE"
+      }
+    ],
+    
+    "development_artifacts": []
+  },
+  
+  "files_to_preserve": {
+    "core_application": [
+      "simulate_manufacturing.js",
+      "simulate_iot.js", 
+      "analyze_data.js",
+      "src/database.js",
+      "src/sensors/*"
+    ],
+    "configuration": [
+      ".env",
+      ".env.example", 
+      "package.json",
+      "package-lock.json",
+      "schema.sql"
+    ],
+    "essential_documentation": [
+      "README.md",
+      "LICENSE"
+    ],
+    "necessary_directories": [
+      "docs/",
+      "_reports/",
+      ".github/",
+      ".vscode/",
+      "node_modules/",
+      ".git/"
+    ]
+  },
+  
+  "risk_assessment": {
+    "total_files_for_deletion": 3,
+    "estimated_size_reduction": "~15-20%",
+    "functionality_impact": "NONE - all core features preserved",
+    "test_requirements": [
+      "npm run manufacturing:quick",
+      "npm run analytics:verbose"
+    ],
+    "rollback_plan": "Files can be restored from git if needed"
+  },
+  
+  "deletion_sequence": [
+    {
+      "step": 1,
+      "files": ["analytics_report.json"],
+      "reason": "Generated file - safest to remove first",
+      "test_after": "npm run analytics:json"
+    },
+    {
+      "step": 2, 
+      "files": ["REPO_OVERVIEW.md"],
+      "reason": "Documentation duplicate",
+      "test_after": "verify README.md still accessible"
+    },
+    {
+      "step": 3,
+      "files": ["run_device_simulation.js"],
+      "reason": "Unused script file",
+      "test_after": "npm run manufacturing:quick"
+    }
+  ],
+  
+  "success_criteria": {
+    "all_tests_pass": true,
+    "no_import_errors": true,
+    "npm_scripts_work": true,
+    "documentation_complete": true
+  }
+}

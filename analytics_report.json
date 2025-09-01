@@ -1,222 +1,710 @@
 {
-  "timestamp": "2025-08-31T23:44:47.362Z",
+  "timestamp": "2025-09-01T21:09:04.742Z",
   "summary": {
-    "totalSensors": 6,
-    "totalDevices": 39,
-    "totalEvents": 39,
-    "recentEvents": 39,
+    "totalSensors": 8,
+    "totalDevices": 83,
+    "totalEvents": 312,
+    "recentEvents": 100,
     "healthDistribution": {
-      "good": 35,
-      "warning": 1,
-      "critical": 3
+      "good": 71,
+      "warning": 6,
+      "critical": 6
     },
-    "averageBattery": 49.08461538461538
+    "averageBattery": 56.0249222466401
   },
   "sensorStats": [
     {
-      "type": "card",
-      "event_count": 9,
-      "min_value": 18693212,
-      "max_value": 85880929,
-      "avg_value": 55862195.222222224,
-      "last_updated": "2025-08-31T23:39:35.899115+00:00"
-    },
-    {
-      "type": "motion",
-      "event_count": 8,
-      "min_value": 0,
-      "max_value": 1,
-      "avg_value": 0.5,
-      "last_updated": "2025-08-31T23:39:35.28705+00:00"
-    },
-    {
       "type": "door",
-      "event_count": 8,
+      "event_count": 61,
       "min_value": 0,
       "max_value": 1,
-      "avg_value": 0.625,
-      "last_updated": "2025-08-31T23:39:36.484634+00:00"
-    },
-    {
-      "type": "humidity",
-      "event_count": 7,
-      "min_value": 20.3,
-      "max_value": 65.2,
-      "avg_value": 37.642857142857146,
-      "last_updated": "2025-08-31T23:39:33.918251+00:00"
+      "avg_value": 0.3114754098360656,
+      "last_updated": "2025-09-01T21:05:26.033692+00:00"
     },
     {
       "type": "temperature",
-      "event_count": 5,
-      "min_value": 12.6,
-      "max_value": 27.9,
-      "avg_value": 19.98,
-      "last_updated": "2025-08-31T23:37:35.683744+00:00"
+      "event_count": 58,
+      "min_value": -31.9,
+      "max_value": 33,
+      "avg_value": 19.758362068965518,
+      "last_updated": "2025-09-01T21:05:26.388042+00:00"
+    },
+    {
+      "type": "card",
+      "event_count": 57,
+      "min_value": 12427290,
+      "max_value": 95319111,
+      "avg_value": 57974346.596491225,
+      "last_updated": "2025-09-01T21:05:27.195798+00:00"
+    },
+    {
+      "type": "motion",
+      "event_count": 47,
+      "min_value": 0,
+      "max_value": 1,
+      "avg_value": 0.6382978723404256,
+      "last_updated": "2025-09-01T21:05:26.835731+00:00"
+    },
+    {
+      "type": "humidity",
+      "event_count": 44,
+      "min_value": 20.3,
+      "max_value": 96.5,
+      "avg_value": 52.875,
+      "last_updated": "2025-09-01T20:53:05.046122+00:00"
     },
     {
       "type": "smoke",
-      "event_count": 2,
+      "event_count": 30,
       "min_value": 1.21,
-      "max_value": 7.1,
-      "avg_value": 4.155,
-      "last_updated": "2025-08-31T23:37:35.683744+00:00"
+      "max_value": 9.14,
+      "avg_value": 4.945666666666667,
+      "last_updated": "2025-09-01T21:05:25.308837+00:00"
+    },
+    {
+      "type": "vibration",
+      "event_count": 9,
+      "min_value": 0.116419262594714,
+      "max_value": 3.55,
+      "avg_value": 2.0344987413634668,
+      "last_updated": "2025-09-01T20:39:03.874385+00:00"
+    },
+    {
+      "type": "gas",
+      "event_count": 6,
+      "min_value": 17.9444316488575,
+      "max_value": 95.2586380763172,
+      "avg_value": 51.225068824072416,
+      "last_updated": "2025-09-01T20:39:08.321597+00:00"
     }
   ],
   "deviceHealth": [
     {
-      "device_id": "device_959560",
-      "latest_battery_level": 28,
-      "last_calibration": "2025-03-12T00:00:00+00:00",
-      "manufacturer": "ConnectedTech",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:39:36.484634+00:00"
-    },
-    {
-      "device_id": "device_554721",
-      "latest_battery_level": 76.3,
-      "last_calibration": "2024-10-20T00:00:00+00:00",
+      "device_id": "device_card_012",
+      "latest_battery_level": 89.8,
+      "last_calibration": "2025-03-01T00:00:00+00:00",
       "manufacturer": "SmartSensor Inc",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:39:35.899115+00:00"
+      "last_updated": "2025-09-01T21:05:27.195798+00:00"
     },
     {
-      "device_id": "device_704783",
-      "latest_battery_level": 73.2,
-      "last_calibration": "2024-08-31T00:00:00+00:00",
+      "device_id": "device_motion_013",
+      "latest_battery_level": 71.5,
+      "last_calibration": "2025-02-21T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
+      "health_status": "good",
+      "last_updated": "2025-09-01T21:05:26.835731+00:00"
+    },
+    {
+      "device_id": "device_temp_010",
+      "latest_battery_level": 90.44477511891031,
+      "last_calibration": "2025-04-10T00:00:00+00:00",
       "manufacturer": "Acme Sensors",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:39:35.28705+00:00"
+      "last_updated": "2025-09-01T21:05:26.388042+00:00"
     },
     {
-      "device_id": "device_153432",
-      "latest_battery_level": 74,
-      "last_calibration": "2025-03-13T00:00:00+00:00",
-      "manufacturer": "TechDevices",
+      "device_id": "device_door_008",
+      "latest_battery_level": 50,
+      "last_calibration": "2025-05-04T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:39:34.648791+00:00"
+      "last_updated": "2025-09-01T21:05:26.033692+00:00"
     },
     {
-      "device_id": "device_412644",
-      "latest_battery_level": 12.7,
-      "last_calibration": "2025-07-20T00:00:00+00:00",
-      "manufacturer": "ConnectedTech",
+      "device_id": "device_smoke_003",
+      "latest_battery_level": 16.6,
+      "last_calibration": "2024-09-19T00:00:00+00:00",
+      "manufacturer": "TechDevices Corp",
       "health_status": "warning",
-      "last_updated": "2025-08-31T23:39:33.918251+00:00"
+      "last_updated": "2025-09-01T21:05:25.308837+00:00"
     },
     {
-      "device_id": "device_607786",
+      "device_id": "device_door_005",
+      "latest_battery_level": 98.2,
+      "last_calibration": "2024-11-18T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T21:05:24.845466+00:00"
+    },
+    {
+      "device_id": "device_motion_011",
+      "latest_battery_level": 48.1,
+      "last_calibration": "2025-02-15T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
+      "health_status": "good",
+      "last_updated": "2025-09-01T21:05:24.379218+00:00"
+    },
+    {
+      "device_id": "device_card_016",
       "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
+      "last_calibration": "2025-03-23T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T21:05:23.917111+00:00"
     },
     {
-      "device_id": "device_600162",
+      "device_id": "device_smoke_008",
+      "latest_battery_level": 74.3,
+      "last_calibration": "2025-07-24T00:00:00+00:00",
+      "manufacturer": "TechDevices Corp",
+      "health_status": "critical",
+      "last_updated": "2025-09-01T21:05:23.394447+00:00"
+    },
+    {
+      "device_id": "device_card_010",
+      "latest_battery_level": 76.3,
+      "last_calibration": "2024-10-30T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:53:06.600569+00:00"
+    },
+    {
+      "device_id": "device_door_001",
+      "latest_battery_level": 92,
+      "last_calibration": "2025-02-03T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:53:06.207066+00:00"
+    },
+    {
+      "device_id": "device_smoke_007",
+      "latest_battery_level": 43.1,
+      "last_calibration": "2025-01-09T00:00:00+00:00",
+      "manufacturer": "TechDevices Corp",
+      "health_status": "critical",
+      "last_updated": "2025-09-01T20:53:05.419514+00:00"
+    },
+    {
+      "device_id": "device_hum_008",
+      "latest_battery_level": 44,
+      "last_calibration": "2025-05-08T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:53:05.046122+00:00"
+    },
+    {
+      "device_id": "device_door_014",
+      "latest_battery_level": 28,
+      "last_calibration": "2025-08-24T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:53:04.280168+00:00"
+    },
+    {
+      "device_id": "device_motion_007",
+      "latest_battery_level": 70.6,
+      "last_calibration": "2025-01-14T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:53:03.141527+00:00"
+    },
+    {
+      "device_id": "device_hum_005",
+      "latest_battery_level": 89.3,
+      "last_calibration": "2025-02-18T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:50:28.787516+00:00"
+    },
+    {
+      "device_id": "device_card_004",
       "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
+      "last_calibration": "2024-12-15T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T20:50:28.398+00:00"
     },
     {
-      "device_id": "device_869963",
-      "latest_battery_level": 71.5,
-      "last_calibration": "2024-12-20T00:00:00+00:00",
-      "manufacturer": "TechDevices",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_40730",
+      "device_id": "device_door_002",
       "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
+      "last_calibration": "2025-06-23T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T20:50:27.258848+00:00"
     },
     {
-      "device_id": "device_102023",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
+      "device_id": "device_motion_001",
+      "latest_battery_level": 88,
+      "last_calibration": "2024-10-24T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T20:50:26.875982+00:00"
     },
     {
-      "device_id": "device_372857",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
+      "device_id": "device_card_006",
+      "latest_battery_level": 52.2,
+      "last_calibration": "2024-12-15T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T20:50:26.48366+00:00"
+    },
+    {
+      "device_id": "device_smoke_002",
+      "latest_battery_level": 96.4,
+      "last_calibration": "2024-09-27T00:00:00+00:00",
+      "manufacturer": "TechDevices Corp",
+      "health_status": "critical",
+      "last_updated": "2025-09-01T20:50:26.093238+00:00"
+    },
+    {
+      "device_id": "device_door_003",
+      "latest_battery_level": 85.5,
+      "last_calibration": "2025-05-20T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:50:25.249259+00:00"
+    },
+    {
+      "device_id": "device_card_011",
+      "latest_battery_level": 57.7,
+      "last_calibration": "2025-04-01T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:46:30.798597+00:00"
+    },
+    {
+      "device_id": "device_card_007",
+      "latest_battery_level": 88.7,
+      "last_calibration": "2025-05-04T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:46:30.345237+00:00"
+    },
+    {
+      "device_id": "device_card_014",
+      "latest_battery_level": 80.4,
+      "last_calibration": "2024-09-25T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:46:29.868106+00:00"
+    },
+    {
+      "device_id": "device_motion_010",
+      "latest_battery_level": 50,
+      "last_calibration": "2024-12-12T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:46:29.449299+00:00"
+    },
+    {
+      "device_id": "device_temp_004",
+      "latest_battery_level": 14.250987076972235,
+      "last_calibration": "2025-03-31T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "warning",
+      "last_updated": "2025-09-01T20:46:29.0328+00:00"
+    },
+    {
+      "device_id": "device_card_009",
+      "latest_battery_level": 82.4,
+      "last_calibration": "2024-09-06T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:17.787814+00:00"
+    },
+    {
+      "device_id": "device_card_002",
+      "latest_battery_level": 26,
+      "last_calibration": "2024-12-31T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:17.576693+00:00"
+    },
+    {
+      "device_id": "device_smoke_005",
+      "latest_battery_level": 50,
+      "last_calibration": "2025-04-21T00:00:00+00:00",
+      "manufacturer": "TechDevices Corp",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:16.502905+00:00"
+    },
+    {
+      "device_id": "device_door_012",
+      "latest_battery_level": 50,
+      "last_calibration": "2025-01-06T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:16.087162+00:00"
+    },
+    {
+      "device_id": "device_temp_003",
+      "latest_battery_level": 56.47891029005533,
+      "last_calibration": "2025-03-05T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:15.766961+00:00"
+    },
+    {
+      "device_id": "device_card_001",
+      "latest_battery_level": 75,
+      "last_calibration": "2025-06-15T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:15.119259+00:00"
+    },
+    {
+      "device_id": "device_door_007",
+      "latest_battery_level": 31.3,
+      "last_calibration": "2025-06-24T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:14.243+00:00"
+    },
+    {
+      "device_id": "device_card_013",
+      "latest_battery_level": 50,
+      "last_calibration": "2025-03-23T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:13.812381+00:00"
+    },
+    {
+      "device_id": "device_card_008",
+      "latest_battery_level": 38.8,
+      "last_calibration": "2025-06-27T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:13.590038+00:00"
+    },
+    {
+      "device_id": "device_hum_006",
+      "latest_battery_level": 37.5,
+      "last_calibration": "2025-03-12T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:13.377933+00:00"
+    },
+    {
+      "device_id": "device_smoke_009",
+      "latest_battery_level": 10.3,
+      "last_calibration": "2025-06-09T00:00:00+00:00",
+      "manufacturer": "TechDevices Corp",
+      "health_status": "warning",
+      "last_updated": "2025-09-01T20:39:12.950114+00:00"
+    },
+    {
+      "device_id": "device_smoke_004",
+      "latest_battery_level": 65.9,
+      "last_calibration": "2025-08-14T00:00:00+00:00",
+      "manufacturer": "TechDevices Corp",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:12.723057+00:00"
+    },
+    {
+      "device_id": "device_hum_011",
+      "latest_battery_level": 51.9,
+      "last_calibration": "2025-03-13T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:12.275544+00:00"
+    },
+    {
+      "device_id": "device_temp_011",
+      "latest_battery_level": 49.82996809781957,
+      "last_calibration": "2025-03-12T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:11.807286+00:00"
+    },
+    {
+      "device_id": "device_door_011",
+      "latest_battery_level": 50,
+      "last_calibration": "2024-09-10T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:11.576027+00:00"
+    },
+    {
+      "device_id": "device_temp_012",
+      "latest_battery_level": 81.5,
+      "last_calibration": "2024-12-09T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:11.356621+00:00"
+    },
+    {
+      "device_id": "device_motion_004",
+      "latest_battery_level": 12,
+      "last_calibration": "2025-05-17T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
+      "health_status": "warning",
+      "last_updated": "2025-09-01T20:39:10.939085+00:00"
+    },
+    {
+      "device_id": "device_motion_005",
+      "latest_battery_level": 50,
+      "last_calibration": "2025-05-13T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:10.72889+00:00"
     },
     {
       "device_id": "device_test_003",
       "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
+      "last_calibration": "2025-06-19T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T20:39:10.495058+00:00"
     },
     {
-      "device_id": "device_311856",
+      "device_id": "device_test_002",
       "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
+      "last_calibration": "2024-12-04T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T20:39:10.270942+00:00"
+    },
+    {
+      "device_id": "device_temp_005",
+      "latest_battery_level": 88.1,
+      "last_calibration": "2025-01-03T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:10.032646+00:00"
+    },
+    {
+      "device_id": "device_hum_004",
+      "latest_battery_level": 12.7,
+      "last_calibration": "2025-02-03T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "warning",
+      "last_updated": "2025-09-01T20:39:09.21484+00:00"
+    },
+    {
+      "device_id": "device_temp_007",
+      "latest_battery_level": 49.782987293889356,
+      "last_calibration": "2024-10-27T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:08.536731+00:00"
+    },
+    {
+      "device_id": "device_gas_001",
+      "latest_battery_level": 54.7903297580964,
+      "last_calibration": "2025-01-21T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:08.321597+00:00"
+    },
+    {
+      "device_id": "device_door_009",
+      "latest_battery_level": 42.3,
+      "last_calibration": "2025-07-26T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:08.123024+00:00"
+    },
+    {
+      "device_id": "device_temp_002",
+      "latest_battery_level": 71.3782385172575,
+      "last_calibration": "2024-10-03T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:07.651323+00:00"
+    },
+    {
+      "device_id": "device_door_004",
+      "latest_battery_level": 56.5,
+      "last_calibration": "2025-08-25T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:07.232072+00:00"
+    },
+    {
+      "device_id": "device_temp_006",
+      "latest_battery_level": 50,
+      "last_calibration": "2024-11-21T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:06.826173+00:00"
+    },
+    {
+      "device_id": "device_motion_006",
+      "latest_battery_level": 73.2,
+      "last_calibration": "2025-03-02T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:06.351972+00:00"
+    },
+    {
+      "device_id": "device_card_005",
+      "latest_battery_level": 80.1,
+      "last_calibration": "2024-12-20T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:06.143054+00:00"
+    },
+    {
+      "device_id": "device_hum_003",
+      "latest_battery_level": 68.4,
+      "last_calibration": "2025-02-22T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:05.92925+00:00"
+    },
+    {
+      "device_id": "device_door_013",
+      "latest_battery_level": 43.3,
+      "last_calibration": "2025-03-16T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:05.286943+00:00"
+    },
+    {
+      "device_id": "device_vib_002",
+      "latest_battery_level": 44.99379241971817,
+      "last_calibration": "2024-10-11T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:03.874385+00:00"
+    },
+    {
+      "device_id": "device_motion_008",
+      "latest_battery_level": 50,
+      "last_calibration": "2024-12-11T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:03.656106+00:00"
+    },
+    {
+      "device_id": "device_hum_001",
+      "latest_battery_level": 90,
+      "last_calibration": "2025-01-29T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:01.853444+00:00"
+    },
+    {
+      "device_id": "device_temp_009",
+      "latest_battery_level": 85.7,
+      "last_calibration": "2025-03-05T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:39:00.77376+00:00"
+    },
+    {
+      "device_id": "device_hum_012",
+      "latest_battery_level": 49.8,
+      "last_calibration": "2025-07-07T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:38:58.677673+00:00"
+    },
+    {
+      "device_id": "device_temp_008",
+      "latest_battery_level": 8.316682164470187,
+      "last_calibration": "2025-07-15T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "critical",
+      "last_updated": "2025-09-01T20:38:56.306628+00:00"
+    },
+    {
+      "device_id": "device_motion_002",
+      "latest_battery_level": 74,
+      "last_calibration": "2025-06-20T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:38:55.205616+00:00"
     },
     {
       "device_id": "device_test_001",
       "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
+      "last_calibration": "2024-10-11T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T20:12:46.035115+00:00"
     },
     {
-      "device_id": "device_84210",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
+      "device_id": "device_temp_013",
+      "latest_battery_level": 22.7,
+      "last_calibration": "2025-01-20T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T20:12:44.940643+00:00"
     },
     {
-      "device_id": "device_811103",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
+      "device_id": "device_vib_001",
+      "latest_battery_level": 64.8637353192701,
+      "last_calibration": "2024-10-05T00:00:00+00:00",
+      "manufacturer": "IoTCo Manufacturing",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T20:12:41.644833+00:00"
     },
     {
-      "device_id": "device_825567",
-      "latest_battery_level": 4.1,
-      "last_calibration": "2024-11-04T00:00:00+00:00",
+      "device_id": "device_door_010",
+      "latest_battery_level": 56.4,
+      "last_calibration": "2025-04-13T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T20:12:41.350392+00:00"
+    },
+    {
+      "device_id": "device_temp_001",
+      "latest_battery_level": 84.13814041466637,
+      "last_calibration": "2025-08-06T00:00:00+00:00",
+      "manufacturer": "Acme Sensors",
+      "health_status": "warning",
+      "last_updated": "2025-09-01T19:18:15.240068+00:00"
+    },
+    {
+      "device_id": "device_temp_014",
+      "latest_battery_level": 24,
+      "last_calibration": "2025-02-07T00:00:00+00:00",
+      "manufacturer": "SmartSensor Inc",
+      "health_status": "good",
+      "last_updated": "2025-09-01T00:28:00.524896+00:00"
+    },
+    {
+      "device_id": "device_hum_002",
+      "latest_battery_level": 60.7,
+      "last_calibration": "2025-08-22T00:00:00+00:00",
       "manufacturer": "IoTCo",
-      "health_status": "critical",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_343396",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "last_updated": "2025-09-01T00:27:58.11669+00:00"
     },
     {
-      "device_id": "device_128631",
-      "latest_battery_level": 26,
-      "last_calibration": "2025-08-10T00:00:00+00:00",
+      "device_id": "device_smoke_006",
+      "latest_battery_level": 64.1,
+      "last_calibration": "2025-06-01T00:00:00+00:00",
       "manufacturer": "ConnectedTech",
       "health_status": "good",
+      "last_updated": "2025-09-01T00:27:01.327955+00:00"
+    },
+    {
+      "device_id": "device_motion_003",
+      "latest_battery_level": 69.1,
+      "last_calibration": "2025-04-15T00:00:00+00:00",
+      "manufacturer": "TechDevices",
+      "health_status": "good",
+      "last_updated": "2025-09-01T00:27:01.004774+00:00"
+    },
+    {
+      "device_id": "device_card_003",
+      "latest_battery_level": 50,
+      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
+      "manufacturer": "Unknown",
+      "health_status": "good",
       "last_updated": "2025-08-31T23:37:43.329753+00:00"
     },
     {
-      "device_id": "device_655850",
+      "device_id": "device_door_006",
+      "latest_battery_level": 50,
+      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
+      "manufacturer": "Unknown",
+      "health_status": "good",
+      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+    },
+    {
+      "device_id": "device_motion_012",
+      "latest_battery_level": 50,
+      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
+      "manufacturer": "Unknown",
+      "health_status": "good",
+      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+    },
+    {
+      "device_id": "device_hum_009",
       "latest_battery_level": 5.6,
       "last_calibration": "2025-05-15T00:00:00+00:00",
       "manufacturer": "ConnectedTech",
@@ -224,7 +712,15 @@
       "last_updated": "2025-08-31T23:37:43.329753+00:00"
     },
     {
-      "device_id": "device_400840",
+      "device_id": "device_motion_009",
+      "latest_battery_level": 4.1,
+      "last_calibration": "2024-11-04T00:00:00+00:00",
+      "manufacturer": "IoTCo",
+      "health_status": "critical",
+      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+    },
+    {
+      "device_id": "device_card_015",
       "latest_battery_level": 50,
       "last_calibration": "2025-08-01T23:37:43.329753+00:00",
       "manufacturer": "Unknown",
@@ -232,23 +728,7 @@
       "last_updated": "2025-08-31T23:37:43.329753+00:00"
     },
     {
-      "device_id": "device_test_002",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_363619",
-      "latest_battery_level": 68.4,
-      "last_calibration": "2025-07-13T00:00:00+00:00",
-      "manufacturer": "Acme Sensors",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_594814",
+      "device_id": "device_hum_007",
       "latest_battery_level": 50.1,
       "last_calibration": "2025-03-24T00:00:00+00:00",
       "manufacturer": "IoTCo",
@@ -256,179 +736,118 @@
       "last_updated": "2025-08-31T23:37:43.329753+00:00"
     },
     {
-      "device_id": "device_839518",
-      "latest_battery_level": 51.9,
-      "last_calibration": "2024-10-23T00:00:00+00:00",
-      "manufacturer": "SmartSensor Inc",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_818954",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_743409",
+      "device_id": "device_hum_010",
       "latest_battery_level": 86.6,
       "last_calibration": "2025-03-09T00:00:00+00:00",
       "manufacturer": "TechDevices",
       "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_48010",
-      "latest_battery_level": 38.8,
-      "last_calibration": "2025-07-09T00:00:00+00:00",
-      "manufacturer": "ConnectedTech",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_739046",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_82160",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_775700",
-      "latest_battery_level": 74.3,
-      "last_calibration": "2025-07-22T00:00:00+00:00",
-      "manufacturer": "Acme Sensors",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_294973",
-      "latest_battery_level": 56.5,
-      "last_calibration": "2025-01-25T00:00:00+00:00",
-      "manufacturer": "ConnectedTech",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_836948",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_941268",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_935755",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_72838",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_597167",
-      "latest_battery_level": 57.7,
-      "last_calibration": "2025-07-21T00:00:00+00:00",
-      "manufacturer": "SmartSensor Inc",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_886330",
-      "latest_battery_level": 50,
-      "last_calibration": "2025-08-01T23:37:43.329753+00:00",
-      "manufacturer": "Unknown",
-      "health_status": "good",
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
-    },
-    {
-      "device_id": "device_635576",
-      "latest_battery_level": 8.6,
-      "last_calibration": "2025-03-17T00:00:00+00:00",
-      "manufacturer": "Acme Sensors",
-      "health_status": "critical",
       "last_updated": "2025-08-31T23:37:43.329753+00:00"
     }
   ],
   "alerts": [
     {
       "type": "WARNING",
-      "device_id": "device_412644",
+      "device_id": "device_smoke_003",
+      "issue": "Low battery level",
+      "battery_level": 16.6,
+      "last_updated": "2025-09-01T21:05:25.308837+00:00"
+    },
+    {
+      "type": "CRITICAL",
+      "device_id": "device_smoke_008",
+      "issue": "Critical health status",
+      "battery_level": 74.3,
+      "last_updated": "2025-09-01T21:05:23.394447+00:00"
+    },
+    {
+      "type": "CRITICAL",
+      "device_id": "device_smoke_007",
+      "issue": "Critical health status",
+      "battery_level": 43.1,
+      "last_updated": "2025-09-01T20:53:05.419514+00:00"
+    },
+    {
+      "type": "CRITICAL",
+      "device_id": "device_smoke_002",
+      "issue": "Critical health status",
+      "battery_level": 96.4,
+      "last_updated": "2025-09-01T20:50:26.093238+00:00"
+    },
+    {
+      "type": "WARNING",
+      "device_id": "device_temp_004",
+      "issue": "Low battery level",
+      "battery_level": 14.250987076972235,
+      "last_updated": "2025-09-01T20:46:29.0328+00:00"
+    },
+    {
+      "type": "WARNING",
+      "device_id": "device_smoke_009",
+      "issue": "Low battery level",
+      "battery_level": 10.3,
+      "last_updated": "2025-09-01T20:39:12.950114+00:00"
+    },
+    {
+      "type": "WARNING",
+      "device_id": "device_motion_004",
+      "issue": "Low battery level",
+      "battery_level": 12,
+      "last_updated": "2025-09-01T20:39:10.939085+00:00"
+    },
+    {
+      "type": "WARNING",
+      "device_id": "device_hum_004",
       "issue": "Low battery level",
       "battery_level": 12.7,
-      "last_updated": "2025-08-31T23:39:33.918251+00:00"
+      "last_updated": "2025-09-01T20:39:09.21484+00:00"
     },
     {
       "type": "CRITICAL",
-      "device_id": "device_825567",
+      "device_id": "device_temp_008",
       "issue": "Critical health status",
-      "battery_level": 4.1,
-      "last_updated": "2025-08-31T23:37:43.329753+00:00"
+      "battery_level": 8.316682164470187,
+      "last_updated": "2025-09-01T20:38:56.306628+00:00"
     },
     {
       "type": "CRITICAL",
-      "device_id": "device_655850",
+      "device_id": "device_hum_009",
       "issue": "Critical health status",
       "battery_level": 5.6,
       "last_updated": "2025-08-31T23:37:43.329753+00:00"
     },
     {
       "type": "CRITICAL",
-      "device_id": "device_635576",
+      "device_id": "device_motion_009",
       "issue": "Critical health status",
-      "battery_level": 8.6,
+      "battery_level": 4.1,
       "last_updated": "2025-08-31T23:37:43.329753+00:00"
     }
   ],
   "trends": {
-    "eventsToday": 39,
+    "eventsToday": 100,
     "eventsByType": {
-      "door": 8,
-      "card": 9,
-      "motion": 8,
-      "humidity": 7,
-      "smoke": 2,
-      "temperature": 5
+      "card": 24,
+      "motion": 18,
+      "temperature": 11,
+      "door": 20,
+      "smoke": 15,
+      "humidity": 11,
+      "gas": 1
     },
     "eventsByHour": {
-      "15": 8,
-      "16": 26,
-      "17": 5
+      "14": 90,
+      "15": 10
     },
     "manufacturerDistribution": {
-      "ConnectedTech": 6,
-      "SmartSensor Inc": 3,
-      "Acme Sensors": 4,
-      "TechDevices": 3,
-      "Unknown": 21,
-      "IoTCo": 2
+      "SmartSensor Inc": 29,
+      "IoTCo Manufacturing": 12,
+      "Acme Sensors": 24,
+      "TechDevices Corp": 7,
+      "IoTCo": 3,
+      "ConnectedTech": 2,
+      "TechDevices": 2,
+      "Unknown": 4
     },
-    "peakHour": "16"
+    "peakHour": "14"
   }
 }

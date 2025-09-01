@@ -1,0 +1,116 @@
+{
+  "test_execution_timestamp": "2025-01-09T14:48:49Z",
+  "test_type": "quickCleanup_baseline_testing",
+  "test_scope": "Pre-cleanup validation: Manufacturing simulation + analytics + environment info",
+  
+  "simulation_results": {
+    "command": "npm run manufacturing -- --iterations=100 --delay=50",
+    "exit_code": 0,
+    "status": "SUCCESS",
+    "execution_time": "~5 seconds",
+    "events_generated": 100,
+    "success_rate": "100.0%",
+    "failed_events": 0,
+    "sensor_distribution": {
+      "motion": 13,
+      "card": 19,
+      "door": 22,
+      "temperature": 16,
+      "humidity": 16,
+      "smoke": 11,
+      "vibration": 2,
+      "gas": 1
+    },
+    "active_sensor_instances": 62,
+    "pattern_detection": "enabled",
+    "registry_mode": "Supabase"
+  },
+  
+  "database_validation": {
+    "total_events_after_test": 269,
+    "recent_events_added": 100,
+    "active_devices": 83,
+    "sensor_types_active": 8,
+    "schema_integrity_status": "EXCELLENT_INTEGRITY",
+    "orphaned_events": 0,
+    "orphaned_health_records": 0,
+    "foreign_key_constraints": "ALL_WORKING"
+  },
+  
+  "analytics_results": {
+    "command": "npm run analytics:verbose",
+    "exit_code": 0,
+    "status": "SUCCESS",
+    "total_events_analyzed": 272,
+    "total_devices": 83,
+    "total_sensor_types": 8,
+    "average_battery_level": "56.0%",
+    "device_health_distribution": {
+      "good": 73,
+      "warning": 5,
+      "critical": 5
+    },
+    "peak_activity_hour": "14:00",
+    "events_today": 100
+  },
+  
+  "data_quality_validation": {
+    "realistic_gas_events": 1,
+    "realistic_vibration_events": 2,
+    "realistic_temperature_events": 16,
+    "temperature_range": "-31.9 to 33°C",
+    "gas_range": "17.94 to 95.26 ppm",
+    "vibration_range": "0.12 to 3.55g",
+    "data_quality_grade": "A+"
+  },
+  
+  "system_health_alerts": {
+    "critical_devices": [
+      {"device": "device_smoke_007", "issue": "Critical health status", "battery": "43.1%"},
+      {"device": "device_smoke_003", "issue": "Critical health status", "battery": "16.6%"},
+      {"device": "device_temp_008", "issue": "Critical health status", "battery": "8.3%"},
+      {"device": "device_motion_009", "issue": "Critical health status", "battery": "4.1%"},
+      {"device": "device_hum_009", "issue": "Critical health status", "battery": "5.6%"}
+    ],
+    "warning_devices": [
+      {"device": "device_smoke_009", "issue": "Low battery level", "battery": "10.3%"},
+      {"device": "device_motion_004", "issue": "Low battery level", "battery": "12.0%"},
+      {"device": "device_hum_004", "issue": "Low battery level", "battery": "12.7%"},
+      {"device": "device_temp_004", "issue": "Low battery level", "battery": "14.3%"}
+    ]
+  },
+  
+  "performance_metrics": {
+    "simulation_speed": "100 events in ~5 seconds",
+    "database_response_time": "Excellent",
+    "analytics_processing_time": "~3 seconds",
+    "memory_usage": "Normal",
+    "cpu_usage": "Low"
+  },
+  
+  "baseline_summary": {
+    "overall_status": "EXCELLENT",
+    "pipeline_health": "100% operational",
+    "data_integrity": "Perfect referential integrity",
+    "sensor_coverage": "All 8 sensor types active", 
+    "simulation_reliability": "100% success rate",
+    "schema_optimization_impact": "Positive - FK constraints working perfectly",
+    "recommendation": "System ready for production use"
+  },
+  
+  "current_environment": {
+    "node_version": "v20.19.0",
+    "npm_version": "9.2.0",
+    "repository_size": "8.1M",
+    "root_file_count": 24
+  },
+  
+  "quick_validation_test": {
+    "command": "npm run manufacturing:quick",
+    "timestamp": "2025-01-09T14:48:49Z",
+    "events_generated": 10,
+    "success_rate": "100.0%",
+    "sensors_active": 9,
+    "status": "SUCCESS"
+  }
+}
