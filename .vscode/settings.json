@@ -1,25 +1,47 @@
 {
-    "chat.mcp.autostart": "newAndOutdated",
-    "chat.mcp.serverSampling": {
-        "mcp-supabase/.vscode/mcp.json: supabase": {
-            "allowedModels": [
-                "copilot/gpt-4.1",
-                "copilot/claude-opus-4",
-                "copilot/claude-opus-41",
-                "copilot/claude-3.5-sonnet",
-                "copilot/claude-3.7-sonnet",
-                "copilot/claude-3.7-sonnet-thought",
-                "copilot/claude-sonnet-4",
-                "copilot/gemini-2.0-flash-001",
-                "copilot/gemini-2.5-pro",
-                "copilot/gpt-4o",
-                "copilot/gpt-5",
-                "copilot/gpt-5-mini",
-                "copilot/grok-code-fast-1",
-                "copilot/o3",
-                "copilot/o3-mini",
-                "copilot/o4-mini"
-            ]
-        }
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "chat.mcp.autostart": "newAndOutdated",
+  "chat.mcp.serverSampling": {
+    "mcp-supabase/.vscode/mcp.json: supabase": {
+      "allowedModels": [
+        "copilot/gpt-4.1",
+        "copilot/claude-opus-4",
+        "copilot/claude-opus-41",
+        "copilot/claude-3.5-sonnet",
+        "copilot/claude-3.7-sonnet",
+        "copilot/claude-3.7-sonnet-thought",
+        "copilot/claude-sonnet-4",
+        "copilot/gemini-2.0-flash-001",
+        "copilot/gemini-2.5-pro",
+        "copilot/gpt-4o",
+        "copilot/gpt-5",
+        "copilot/gpt-5-mini",
+        "copilot/grok-code-fast-1",
+        "copilot/o3",
+        "copilot/o3-mini",
+        "copilot/o4-mini"
+      ]
     }
+  },
+  "deno.enablePaths": [
+    "supabase/functions"
+  ],
+  "deno.lint": true,
+  "deno.unstable": [
+    "bare-node-builtins",
+    "byonm",
+    "sloppy-imports",
+    "unsafe-proto",
+    "webgpu",
+    "broadcast-channel",
+    "worker-options",
+    "cron",
+    "kv",
+    "ffi",
+    "fs",
+    "http",
+    "net"
+  ]
 }

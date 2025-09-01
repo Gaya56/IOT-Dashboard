@@ -1,0 +1,47 @@
+{
+  "test_date": "2025-09-01T22:08:54.349487+00:00",
+  "database_connection": {
+    "status": "successful",
+    "query": "SELECT now();",
+    "result": [{"now": "2025-09-01 22:07:57.744863+00"}]
+  },
+  "iot_events_test": {
+    "insert_query": "INSERT INTO iot_events (device_id, type, value, status, metadata) VALUES ('device_temp_007', 'temperature', 23.5, 'normal', '{\"test\": true, \"source\": \"CLI_test\"}') RETURNING id, device_id, type, value, status, metadata, created_at;",
+    "insert_result": {
+      "id": 338,
+      "device_id": "device_temp_007",
+      "type": "temperature",
+      "value": "23.5",
+      "status": "normal",
+      "metadata": {
+        "test": true,
+        "source": "CLI_test"
+      },
+      "created_at": "2025-09-01 22:08:54.349487+00"
+    },
+    "read_back_query": "SELECT * FROM iot_events WHERE id = 338;",
+    "read_back_result": {
+      "id": 338,
+      "device_id": "device_temp_007",
+      "type": "temperature",
+      "value": "23.5",
+      "status": "normal",
+      "metadata": {
+        "test": true,
+        "source": "CLI_test"
+      },
+      "created_at": "2025-09-01 22:08:54.349487+00"
+    },
+    "verification": "successful"
+  },
+  "tables_available": [
+    "device_types",
+    "iot_events",
+    "locations", 
+    "sensor_stats",
+    "device_health",
+    "devices",
+    "manufacturers"
+  ],
+  "iot_events_table_rows": 333
+}
