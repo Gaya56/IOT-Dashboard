@@ -325,8 +325,14 @@ const { data, error } = await supabase
 
 ## Documentation
 
-- [Complete API Reference](docs/APIDocs.MD)
-- [Setup Instructions](.github/instructions/plan.instructions.md)
+For detailed technical information, see:
+- **[Repository Overview](docs/repository-overview.md)** - Complete project structure and features
+- **[Supabase Architecture](docs/supabase-workflow.md)** - Database schema and workflow diagrams
+- **[API Documentation](docs/APIDocs.MD)** - REST API reference and examples
+- **[Architecture Guide](docs/architecture.md)** - Technical architecture details
+- **[Setup Instructions](.github/instructions/plan.instructions.md)** - Development guidelines
+- **[API Documentation](docs/APIDocs.MD)** - REST API reference and examples
+- **[Architecture Guide](docs/architecture.md)** - Technical architecture details
 
 ## Contributing
 
