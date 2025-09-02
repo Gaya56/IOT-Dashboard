@@ -1,0 +1,65 @@
+{
+  "validation_results": {
+    "timestamp": "2025-09-02T02:16:00Z",
+    "row_parity_test": {
+      "total_events": 333,
+      "embedded_events": 27,
+      "missing_embeddings": 306,
+      "completion_percentage": "8.1%",
+      "status": "in_progress"
+    },
+    "similarity_test": {
+      "status": "passed",
+      "query_performance": "fast",
+      "results": [
+        {
+          "id": 313,
+          "type": "door", 
+          "device_id": "device_door_008",
+          "status": "closed",
+          "cosine_similarity": 1.0,
+          "notes": "self-match (expected)"
+        },
+        {
+          "id": 323,
+          "type": "door",
+          "device_id": "device_door_012", 
+          "status": "closed",
+          "cosine_similarity": 0.978,
+          "notes": "similar door sensor, same status"
+        },
+        {
+          "id": 318,
+          "type": "door",
+          "device_id": "device_door_014",
+          "status": "closed", 
+          "cosine_similarity": 0.967,
+          "notes": "similar door sensor, same status"
+        }
+      ],
+      "semantic_quality": "excellent - door sensors cluster together"
+    },
+    "scheduled_job_status": {
+      "job_id": 1,
+      "job_name": "embedding-sync-job",
+      "extensions_enabled": {
+        "pg_cron": true,
+        "pg_net": true
+      },
+      "recent_runs": [
+        {
+          "runid": 2,
+          "status": "failed",
+          "error": "pg_net extension not enabled (now fixed)"
+        }
+      ],
+      "fix_applied": "pg_net extension enabled",
+      "expected_next_run": "every 2 minutes"
+    }
+  },
+  "database_performance": {
+    "vector_index": "ivfflat with cosine similarity",
+    "query_speed": "fast",
+    "index_status": "optimized"
+  }
+}

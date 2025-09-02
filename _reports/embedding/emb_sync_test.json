@@ -1,0 +1,30 @@
+{
+  "sync_schedule": {
+    "job_name": "embedding-sync-job",
+    "job_id": 1,
+    "cron_schedule": "*/2 * * * *",
+    "description": "every 2 minutes",
+    "function_endpoint": "/functions/v1/embed-backfill",
+    "batch_size": 10,
+    "status": "active"
+  },
+  "security": {
+    "vault_secrets": {
+      "project_url": "stored_securely",
+      "anon_key": "stored_securely"
+    },
+    "authentication": "Bearer token via vault"
+  },
+  "test_data": {
+    "test_event_inserted": true,
+    "test_device_id": "device_temp_007",
+    "test_metadata": {
+      "test": "scheduled sync test",
+      "sync_job": "embedding-sync-job"
+    }
+  },
+  "monitoring": {
+    "check_job_runs": "select * from cron.job_run_details where jobid = 1",
+    "check_embeddings_count": "select count(*) from event_embeddings"
+  }
+}

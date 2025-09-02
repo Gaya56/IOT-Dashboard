@@ -1,0 +1,31 @@
+{
+  "backfill_results": {
+    "function_deployed": true,
+    "function_name": "embed-backfill",
+    "version": 2,
+    "test_run": {
+      "limit": 5,
+      "processed": 5,
+      "errors": 0,
+      "existing_embeddings": 0,
+      "sample_event_ids": [342, 341, 338, 336, 335],
+      "embedding_dimensions": 384,
+      "model_used": "gte-small"
+    },
+    "performance_notes": {
+      "small_batches": "5 events processed successfully in ~3 seconds",
+      "large_batches": "20+ events cause timeout due to compute resource limits",
+      "recommended_batch_size": "5-10 events per invocation"
+    },
+    "sample_embedding_texts": [
+      "temperature sensor device device_temp_007 value 22.5 status Good",
+      "card sensor device device_card_009 value 73511202 status read_success location Production Line 2 Card Reader 009 health good",
+      "motion sensor device device_motion_001 value 0 status no_motion location Production Line 2 Motion Detector 001 health good"
+    ]
+  },
+  "database_status": {
+    "embeddings_table_rows": 5,
+    "total_iot_events": 342,
+    "backfill_progress": "1.5%"
+  }
+}
